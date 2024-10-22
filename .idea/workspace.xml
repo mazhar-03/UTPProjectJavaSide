@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="238a19e4-8aca-4329-85d9-4d982650fc85" name="Changes" comment="renewed the images, and last version of my java side. didn't share with Mr.Filip" />
+    <list default="true" id="238a19e4-8aca-4329-85d9-4d982650fc85" name="Changes" comment="renewed the images, and last version except UNIT TESTING. didn't share with Mr.Filip">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/CheckersGameTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Checkers.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Checkers.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CheckersGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/CheckersGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CheckersGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/CheckersGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +29,20 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "mazhar-03"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="2b5a7e9f-5654-4df6-84ac-7c7051b4b202" />
+        <option name="url" value="https://github.com/mazhar-03/UTPProjectJavaSide.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -31,8 +54,13 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
@@ -50,12 +78,13 @@
       <recent name="C:\Users\mazha\OneDrive\Pulpit\PROJECT\Checkers\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mazha\OneDrive\Pulpit\PROJECT\Checkers\src\main" />
       <recent name="C:\Users\mazha\OneDrive\Pulpit\PROJECT\Checkers\images" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.Main" />
       <module name="Checkers" />
       <option name="VM_PARAMETERS" value="-Djava.library.path=&quot;C:\Users\mazha\CLionProject\Project\gameLogic\cmake-build-debug&quot;" />
       <method v="2">
@@ -73,7 +102,7 @@
       <updated>1729537236978</updated>
       <workItem from="1729537237965" duration="1512000" />
       <workItem from="1729540129388" duration="4071000" />
-      <workItem from="1729595088928" duration="9907000" />
+      <workItem from="1729595088928" duration="14289000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -91,7 +120,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729618450842</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="renewed the images, and last version except UNIT TESTING. didn't share with Mr.Filip">
+      <option name="closed" value="true" />
+      <created>1729618730358</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1729618730358</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -111,6 +148,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
     <MESSAGE value="renewed the images, and last version of my java side. didn't share with Mr.Filip" />
-    <option name="LAST_COMMIT_MESSAGE" value="renewed the images, and last version of my java side. didn't share with Mr.Filip" />
+    <MESSAGE value="renewed the images, and last version except UNIT TESTING. didn't share with Mr.Filip" />
+    <option name="LAST_COMMIT_MESSAGE" value="renewed the images, and last version except UNIT TESTING. didn't share with Mr.Filip" />
   </component>
 </project>
