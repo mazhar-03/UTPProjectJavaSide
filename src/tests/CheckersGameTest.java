@@ -2,6 +2,9 @@ package tests;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import main.Main;
+
+import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -59,14 +62,18 @@ public class CheckersGameTest {
 
     @Test
     public void testCaptureMove() {
-        // Assume Player 1 (at 2, 1) can capture Player 2 (at 3, 2) by jumping to (4, 3)
-        Main.movePiece(5, 4, 4, 3);  // Set up Player 2 piece
-        boolean isValidCapture = Main.movePiece(2, 1, 4, 3);
-        assertTrue(isValidCapture, "Capture move from (2, 1) to (4, 3) should be valid");
-
-        // Check that the captured piece was removed and the Player 1 piece moved
+        // Set up a scenario where a capture is possible
         int[][] board = Main.getBoardState();
-        assertEquals(0, board[3][2], "Expected the captured piece at (3, 2) to be removed");
-        assertEquals(1, board[4][3], "Expected Player 1 piece at position (4, 3)");
+        // Assume board is correctly initialized here
+
+        // Move should be valid: (2, 1) -> (4, 3) with a capture at (3, 2)
+        boolean isValidMove = Main.movePiece(2, 1, 4, 3);
+        assertTrue(isValidMove, "Capture move from (2, 1) to (4, 3) should be valid");
+
+        // Check if the opponent piece at (3, 2) was captured
+        board = Main.getBoardState();
+        assertEquals(0, board[3][2], "The opponent's piece at (3, 2) should have been captured");
+        assertEquals(1, board[4][3], "The player's piece should have moved to (4, 3)");
     }
+
 }
