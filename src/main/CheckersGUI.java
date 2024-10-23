@@ -6,8 +6,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class CheckersGUI extends JFrame {
-    private JPanel boardPanel;
-    private JButton[][] boardButtons = new JButton[8][8];  // 8x8 grid of buttons
+    private final JPanel boardPanel;
+    private final JButton[][] boardButtons = new JButton[8][8];  // 8x8 grid of buttons
     private Point selectedPiece = null;  // Keeps track of selected piece for moving
 
     public CheckersGUI() {
@@ -49,6 +49,25 @@ public class CheckersGUI extends JFrame {
         }
     }
 
+    // After a move is made, check for the endgame status
+    private void checkEndgameStatus() {
+        int result = Main.checkEndgame();  // Call the JNI method to check the game status
+
+        if (result == 1) {
+            JOptionPane.showMessageDialog(this, "Player 1 Wins!", "Game Over", JOptionPane.INFORMATION_MESSAGE);
+            closeGame();
+        } else if (result == -1) {
+            JOptionPane.showMessageDialog(this, "Player 2 Wins!", "Game Over", JOptionPane.INFORMATION_MESSAGE);
+            closeGame();
+        } else if (result == 2) {
+            JOptionPane.showMessageDialog(this, "It's a draw!", "Game Over", JOptionPane.INFORMATION_MESSAGE);
+            closeGame();
+        }
+    }
+    private void closeGame() {
+        System.exit(0);  // Exit the application
+    }
+
     // Update the GUI based on the current board state from the C++ backend
     private void updateBoard() {
         int[][] boardState = Main.getBoardState();  // Fetch the current board state from C++
@@ -73,12 +92,16 @@ public class CheckersGUI extends JFrame {
                 }
             }
         }
+
+        // Check for the endgame status after updating the board
+        checkEndgameStatus();
     }
+
 
     // Handle tile clicks and manage piece movement
     private class TileClickListener implements ActionListener {
-        private int row;
-        private int col;
+        private final int row;
+        private final int col;
 
         public TileClickListener(int row, int col) {
             this.row = row;
