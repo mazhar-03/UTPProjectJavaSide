@@ -8,7 +8,6 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        System.out.println("FETCHING!!!");
         SwingUtilities.invokeLater(main.CheckersGUI::new);
     }
     public static native int[][] getBoardState();
