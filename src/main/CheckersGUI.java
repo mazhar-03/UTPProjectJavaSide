@@ -11,7 +11,7 @@ public class CheckersGUI extends JFrame {
     private final JPanel boardPanel;
     private final JButton[][] boardButtons = new JButton[8][8];  // 8x8 grid of buttons
     private Point selectedPiece = null;  // Keeps track of selected piece for moving
-    private Point highlightedTile = new Point(0, 0);  // Keep track of the currently highlighted tile
+    private final Point highlightedTile = new Point(0, 0);  // Keep track of the currently highlighted tile
 
     public CheckersGUI() {
         setTitle("Checkers Game");
