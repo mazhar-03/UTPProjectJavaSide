@@ -134,23 +134,25 @@ public class CheckersGUI extends JFrame {
     }
 
     // Handling the move when a tile is clicked or selected via keyboard
+    // Handling the move when a tile is clicked or selected via keyboard
     private void processMove(int row, int col) {
         if (selectedPiece == null) {
             // First click: select the piece to move
-            int[][] boardState = Main.getBoardState();  // fetching the current board state from C++
-            if (boardState[row][col] != 0) {  // ensuring the tile contains a piece
-                selectedPiece = new Point(row, col);  // save the selected piece position via awt library
+            int[][] boardState = Main.getBoardState();  // Fetch the current board state from C++
+            if (boardState[row][col] != 0) {  // Ensure the tile contains a piece
+                selectedPiece = new Point(row, col);  // Save the selected piece position
             }
         } else {
             // Second click -> attempt to move the selected piece
-            // send move to C++
-            boolean moveSuccess = Main.movePiece(selectedPiece.x, selectedPiece.y, row, col);
+            boolean moveSuccess = Main.movePiece(selectedPiece.x, selectedPiece.y, row, col);  // Send move to C++
             if (moveSuccess) {
                 updateBoard();  // Re-fetch the board state and update the GUI
+                checkEndgameStatus();  // Check if the game is over after this move
             }
             selectedPiece = null;  // Reset the selection after attempting the move
         }
     }
+
 
     // checking keyboard things. Since just gonna use keyPressed() extending KeyAdapter is okay
     private class BoardKeyListener extends KeyAdapter {
