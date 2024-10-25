@@ -10,20 +10,18 @@ import java.awt.event.KeyEvent;
 public class CheckersGUI extends JFrame {
     private final JPanel boardPanel;
     private final JButton[][] boardButtons = new JButton[8][8];  // 8x8 grid of buttons
-    private Point selectedPiece = null;  // Keeps track of selected piece for moving
-    private final Point highlightedTile = new Point(0, 0);  // Keep track of the currently highlighted tile
+    private Point selectedPiece = null;  // keeps track of selected piece for moving
+    private final Point highlightedTile = new Point(0, 0);  // keep track of the currently highlighted tile
 
     public CheckersGUI() {
         setTitle("Checkers Game");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(800, 800);
-        setLocationRelativeTo(null);  // Center the window on screen
+        setLocationRelativeTo(null);
 
-        // Initialize the board panel with a grid layout
         boardPanel = new JPanel(new GridLayout(8, 8));
         initializeBoard();
 
-        // Add the board panel to the frame
         add(boardPanel);
         setVisible(true);
 
@@ -32,12 +30,12 @@ public class CheckersGUI extends JFrame {
 
         // Add a KeyListener to listen for arrow keys and Enter key
         addKeyListener(new BoardKeyListener());
-        setFocusable(true);  // Ensure the frame is focusable for key events
+        setFocusable(true);
         requestFocusInWindow();  // Request focus when the game starts
-        highlightTile(0, 0);  // Start by highlighting the top-left tile
+        highlightTile(0, 0);
     }
 
-    // Initialize the board layout with clickable tiles
+
     private void initializeBoard() {
         for (int row = 0; row < 8; row++) {
             for (int col = 0; col < 8; col++) {
@@ -46,9 +44,9 @@ public class CheckersGUI extends JFrame {
 
                 // Set tile colors based on checkerboard pattern
                 if ((row + col) % 2 == 0) {
-                    tile.setBackground(new Color(233, 224, 210));  // Light tile
+                    tile.setBackground(new Color(233, 224, 210));  // light tile
                 } else {
-                    tile.setBackground(new Color(150, 75, 0));  // Dark tile
+                    tile.setBackground(new Color(150, 75, 0));  // dark tile
                     tile.addActionListener(new TileClickListener(row, col));  // Add action listener to dark tiles only
                 }
 
@@ -58,7 +56,7 @@ public class CheckersGUI extends JFrame {
         }
     }
 
-    // Highlight the currently selected tile
+    // highlighting the currently selected tile
     private void highlightTile(int row, int col) {
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
@@ -74,7 +72,7 @@ public class CheckersGUI extends JFrame {
         highlightedTile.setLocation(row, col);  // Update highlighted tile position
     }
 
-    // After a move is made, check for the endgame status
+    // after a move is made, check for the endgame status
     private void checkEndgameStatus() {
         int result = Main.checkEndgame();  // Call the JNI method to check the game status
 
@@ -94,19 +92,15 @@ public class CheckersGUI extends JFrame {
         System.exit(0);  // Exit the application
     }
 
-    // Update the GUI based on the current board state from the C++ backend
+    // update the GUI side on the current board state from the C++ backend (W JNI)
     private void updateBoard() {
-        int[][] boardState = Main.getBoardState();  // Fetch the current board state from C++
-
         for (int row = 0; row < 8; row++) {
             for (int col = 0; col < 8; col++) {
-                JButton tile = boardButtons[row][col];
-                int piece = boardState[row][col];
+                int piece = Main.getTileState(row, col);  // Fetch the state of each tile separately
 
-                // Clear the current icon first
+                JButton tile = boardButtons[row][col];
                 tile.setIcon(null);
 
-                // Set the piece icons based on the board state
                 if (piece == 1) {
                     tile.setIcon(new ImageIcon("images/white.png"));  // White piece
                 } else if (piece == -1) {
@@ -118,12 +112,9 @@ public class CheckersGUI extends JFrame {
                 }
             }
         }
-
-        // Check for the endgame status after updating the board
-        checkEndgameStatus();
     }
 
-    // Handle tile clicks and manage piece movement
+    // handling the pieces' movements according to mouse clicks
     private class TileClickListener implements ActionListener {
         private final int row;
         private final int col;
@@ -136,21 +127,24 @@ public class CheckersGUI extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
             processMove(row, col);
-            requestFocusInWindow();  // Ensure keyboard focus is regained after a mouse click
+            // ensure keyboard focus is regained after a mouse click.
+            // The game can be played with mouse and keyboard simultaneously
+            requestFocusInWindow();
         }
     }
 
-    // Process the move when a tile is clicked or selected via keyboard
+    // Handling the move when a tile is clicked or selected via keyboard
     private void processMove(int row, int col) {
         if (selectedPiece == null) {
             // First click: select the piece to move
-            int[][] boardState = Main.getBoardState();  // Fetch the current board state from C++
-            if (boardState[row][col] != 0) {  // Ensure the tile contains a piece
-                selectedPiece = new Point(row, col);  // Save the selected piece position
+            int[][] boardState = Main.getBoardState();  // fetching the current board state from C++
+            if (boardState[row][col] != 0) {  // ensuring the tile contains a piece
+                selectedPiece = new Point(row, col);  // save the selected piece position via awt library
             }
         } else {
-            // Second click: attempt to move the selected piece
-            boolean moveSuccess = Main.movePiece(selectedPiece.x, selectedPiece.y, row, col);  // Send move to C++
+            // Second click -> attempt to move the selected piece
+            // send move to C++
+            boolean moveSuccess = Main.movePiece(selectedPiece.x, selectedPiece.y, row, col);
             if (moveSuccess) {
                 updateBoard();  // Re-fetch the board state and update the GUI
             }
@@ -158,7 +152,7 @@ public class CheckersGUI extends JFrame {
         }
     }
 
-    // Key listener for arrow key navigation and Enter key selection
+    // checking keyboard things. Since just gonna use keyPressed() extending KeyAdapter is okay
     private class BoardKeyListener extends KeyAdapter {
         @Override
         public void keyPressed(KeyEvent e) {
@@ -179,7 +173,7 @@ public class CheckersGUI extends JFrame {
                     if (col < 7) highlightTile(row, col + 1);
                     break;
                 case KeyEvent.VK_ENTER:
-                    processMove(row, col);  // Select or move the piece when Enter is pressed
+                    processMove(row, col);  // select or move the piece when "enter" is pressed
                     break;
             }
         }
