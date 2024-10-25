@@ -96,11 +96,13 @@ public class CheckersGUI extends JFrame {
     private void updateBoard() {
         for (int row = 0; row < 8; row++) {
             for (int col = 0; col < 8; col++) {
-                int piece = Main.getTileState(row, col);  // Fetch the state of each tile separately
-
                 JButton tile = boardButtons[row][col];
+                int piece = Main.getTileState(row, col);  // Fetch the state of each individual tile
+
+                // Clear the current icon first
                 tile.setIcon(null);
 
+                // Set the piece icons based on the tile state
                 if (piece == 1) {
                     tile.setIcon(new ImageIcon("images/white.png"));  // White piece
                 } else if (piece == -1) {
@@ -112,6 +114,8 @@ public class CheckersGUI extends JFrame {
                 }
             }
         }
+        // Check for the endgame status after updating the board
+        checkEndgameStatus();
     }
 
     // handling the pieces' movements according to mouse clicks
@@ -138,16 +142,15 @@ public class CheckersGUI extends JFrame {
     private void processMove(int row, int col) {
         if (selectedPiece == null) {
             // First click: select the piece to move
-            int[][] boardState = Main.getBoardState();  // Fetch the current board state from C++
-            if (boardState[row][col] != 0) {  // Ensure the tile contains a piece
+            int piece = Main.getTileState(row, col);  // Query the tile state instead of the board
+            if (piece != 0) {  // Ensure the tile contains a piece
                 selectedPiece = new Point(row, col);  // Save the selected piece position
             }
         } else {
-            // Second click -> attempt to move the selected piece
+            // Second click: attempt to move the selected piece
             boolean moveSuccess = Main.movePiece(selectedPiece.x, selectedPiece.y, row, col);  // Send move to C++
             if (moveSuccess) {
                 updateBoard();  // Re-fetch the board state and update the GUI
-                checkEndgameStatus();  // Check if the game is over after this move
             }
             selectedPiece = null;  // Reset the selection after attempting the move
         }

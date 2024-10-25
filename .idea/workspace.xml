@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="238a19e4-8aca-4329-85d9-4d982650fc85" name="Changes" comment="final state of the game by java side">
+    <list default="true" id="238a19e4-8aca-4329-85d9-4d982650fc85" name="Changes" comment="Added &quot;check each tile logic&quot;">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/CheckersGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/CheckersGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/CheckersGameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/CheckersGameTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +89,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CheckersGameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CheckersGameTest.testBoardInitialization" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="Checkers" />
       <extension name="coverage">
         <pattern>
@@ -96,14 +99,14 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.CheckersGameTest" />
-      <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="testBoardInitialization" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-Djava.library.path=&quot;C:\Users\mazha\CLionProject\Project\gameLogic\cmake-build-debug&quot;" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CheckersGameTest.testCaptureMove" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CheckersGameTest.testCaptureMove" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="Checkers" />
       <extension name="coverage">
         <pattern>
@@ -114,6 +117,40 @@
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.CheckersGameTest" />
       <option name="METHOD_NAME" value="testCaptureMove" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-Djava.library.path=&quot;C:\Users\mazha\CLionProject\Project\gameLogic\cmake-build-debug&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CheckersGameTest.testDrawCondition" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <module name="Checkers" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.CheckersGameTest" />
+      <option name="METHOD_NAME" value="testDrawCondition" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-Djava.library.path=&quot;C:\Users\mazha\CLionProject\Project\gameLogic\cmake-build-debug&quot;" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CheckersGameTest.testEndgameDetection" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <module name="Checkers" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.CheckersGameTest" />
+      <option name="METHOD_NAME" value="testEndgameDetection" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-Djava.library.path=&quot;C:\Users\mazha\CLionProject\Project\gameLogic\cmake-build-debug&quot;" />
       <method v="2">
@@ -139,15 +176,12 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.CheckersGameTest.testBoardInitialization" />
+      <item itemvalue="JUnit.CheckersGameTest.testDrawCondition" />
+      <item itemvalue="JUnit.CheckersGameTest.testEndgameDetection" />
       <item itemvalue="JUnit.CheckersGameTest.testKingPromotion" />
       <item itemvalue="JUnit.CheckersGameTest.testCaptureMove" />
-      <item itemvalue="JUnit.CheckersGameTest" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="JUnit.CheckersGameTest" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -163,7 +197,7 @@
       <workItem from="1729702324979" duration="8522000" />
       <workItem from="1729802632328" duration="6573000" />
       <workItem from="1729809931922" duration="154000" />
-      <workItem from="1729866486967" duration="2680000" />
+      <workItem from="1729866486967" duration="5825000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -253,7 +287,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729871301404</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Added &quot;check each tile logic&quot;">
+      <option name="closed" value="true" />
+      <created>1729871832911</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1729871832911</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -277,6 +319,7 @@
     <MESSAGE value="import packaged main file (javac)" />
     <MESSAGE value="check endgame works correctly" />
     <MESSAGE value="final state of the game by java side" />
-    <option name="LAST_COMMIT_MESSAGE" value="final state of the game by java side" />
+    <MESSAGE value="Added &quot;check each tile logic&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added &quot;check each tile logic&quot;" />
   </component>
 </project>
