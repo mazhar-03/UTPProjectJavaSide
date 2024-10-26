@@ -2,7 +2,6 @@ package tests;
 
 import main.Main;
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 public class CheckersGameTest {
@@ -135,7 +134,7 @@ public class CheckersGameTest {
     }
     @Test
     void player2WinsAllAlternateSequence(){
-        //starting position player1 moves first
+        //starting position player1 moves first (black)
         Main.movePiece(2,1,3,2);
         Main.movePiece(5,2,4,3);
         Main.movePiece(2,3,3,4);
@@ -144,31 +143,35 @@ public class CheckersGameTest {
         Main.movePiece(5,6,4,5);
         Main.movePiece(0,3,1,4);
         Main.movePiece(2,1,0,3);
-
         Main.movePiece(2,3,3,2);
-        Main.movePiece(4,5,2,3);
+        Main.movePiece(5,4,4,3);
         Main.movePiece(0,1,1,2);
-        Main.movePiece(2,3,0,1);
-        Main.movePiece(2,5,3,4);
-        Main.movePiece(0,3,2,5);
-        Main.movePiece(2,5,4,3); //2nd jump
-        Main.movePiece(4,3,2,1); //3rd jump
-        Main.movePiece(0,1,3,2);
-        Main.movePiece(0,1,1,2);
-        Main.movePiece(1,6,2,5);
-        Main.movePiece(1,2,2,3);
-        Main.movePiece(3,2,4,3);
-        Main.movePiece(5,4,3,2);
-        Main.movePiece(2,5,3,4);
-        Main.movePiece(2,3,4,5);
+        Main.movePiece(0,3,2,1);
         Main.movePiece(2,7,3,6);
         Main.movePiece(4,5,2,7);
-        Main.movePiece(0,5,1,6);
-        Main.movePiece(2,7,0,5);
+        Main.movePiece(3,2,5,4);
+        Main.movePiece(6,5,4,3);
+        Main.movePiece(3,4,5,2);
+        Main.movePiece(6,1,4,3);
+        Main.movePiece(2,5,3,4);
+        Main.movePiece(4,3,2,5);
+        Main.movePiece(2,5,0,3);//2nd jump
+        Main.movePiece(1,0,3,2);
+        Main.movePiece(5,0,4,1);
+        Main.movePiece(0,5,1,4);
+        Main.movePiece(0,3,2,5);
+        Main.movePiece(1,6,3,4);
+        Main.movePiece(4,1,2,3);
         Main.movePiece(0,7,1,6);
-        Main.movePiece(0,5,2,7);
+        Main.movePiece(2,7,0,5);
+        Main.movePiece(3,4,4,3);
+        Main.movePiece(7,0,6,1);
+        Main.movePiece(4,3,5,2);
+        Main.movePiece(6,1,4,3);
 
         int endgameStatus = Main.checkEndgame();
+
+
         assertEquals(-1, endgameStatus, "Expected Player 2 (black) to win the game");
     }
 }
