@@ -2,89 +2,173 @@ package tests;
 
 import main.Main;
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class CheckersGameTest {
-
     @Test
-    public void testCaptureMove() {
-        // Set up a scenario where a capture is possible.
-        // Player 1 piece at (2, 1) and Player 2 piece at (3, 2)
-        int[][] board = Main.getBoardState();
-        board[2][1] = 1;  // Player 1's piece
-        board[3][2] = -1; // Player 2's piece
-
-        // Attempt to capture the opponent's piece by jumping from (2, 1) to (4, 3)
-        boolean isValidMove = Main.movePiece(2, 1, 4, 3);
-
-        // Verify that the move was successful
-        assertTrue(isValidMove, "Capture move from (2, 1) to (4, 3) should be valid");
-
-        // Fetch the updated board state after the move
-        board = Main.getBoardState();
-
-        // Check that the opponent's piece at (3, 2) was captured
-        assertEquals(0, board[3][2], "The opponent's piece at (3, 2) should have been captured");
-
-        // Check that Player 1's piece is now at (4, 3)
-        assertEquals(1, board[4][3], "Player 1's piece should have moved to (4, 3)");
+    void testBoardInitialization() {
+        for (int row = 0; row < 8; row++) {
+            for (int col = 0; col < 8; col++) {
+                int tileState = Main.getTileState(row, col);
+                if (row < 3 && (row + col) % 2 != 0) {
+                    assertEquals(1, tileState, "Expected Player 1 piece at (" + row + "," + col + ")");
+                } else if (row > 4 && (row + col) % 2 != 0) {
+                    assertEquals(-1, tileState, "Expected Player 2 piece at (" + row + "," + col + ")");
+                } else {
+                    assertEquals(0, tileState, "Expected empty tile at (" + row + "," + col + ")");
+                }
+            }
+        }
     }
 
     @Test
-    public void testInvalidMove() {
-        // Set up a scenario with an invalid move attempt
-        int[][] board = Main.getBoardState();
-        board[2][1] = 1;  // Player 1's piece
-        board[4][3] = 0;  // Ensure the destination is empty
+    void testValidMove() {
+        int startX = 2, startY = 1;
+        int endX = 3, endY = 2;
 
-        // Attempt an invalid move without capturing: (2, 1) to (4, 3) without jumping
-        boolean isValidMove = Main.movePiece(2, 1, 4, 3);
+        boolean moveResult = Main.movePiece(startX, startY, endX, endY);
+        assertTrue(moveResult, "Expected move to be valid from (" + startX + "," + startY + ") to (" + endX + "," + endY + ")");
 
-        // Verify that the move was not successful
-        assertFalse(isValidMove, "The move from (2, 1) to (4, 3) should be invalid without capture");
+        assertEquals(1, Main.getTileState(endX, endY), "Expected Player 1 piece at new position (" + endX + "," + endY + ")");
+        assertEquals(0, Main.getTileState(startX, startY), "Expected old position (" + startX + "," + startY + ") to be empty");
     }
 
     @Test
-    public void testKingPromotion() {
-        // Set up a scenario where Player 1 promotes a piece to a king
-        int[][] board = Main.getBoardState();
-        board[6][1] = 1;  // Player 1's piece near the end of the board
+    void testCaptureMechanics() {
+        // Setup capture by moving pieces step-by-step
+        Main.movePiece(2, 1, 3, 2); // Player 1 moves
+        Main.movePiece(5, 4, 4, 3); // Player 2 moves into capture range
 
-        // Move the piece to the last row to promote it to a king
-        boolean isValidMove = Main.movePiece(6, 1, 7, 0);
+        boolean captureResult = Main.movePiece(3, 2, 5, 4); // Player 1 captures Player 2
+        assertTrue(captureResult, "Expected capture to be valid from (3,2) to (5,4)");
 
-        // Verify that the move was successful
-        assertTrue(isValidMove, "The move from (6, 1) to (7, 0) should be valid for promotion");
-
-        // Fetch the updated board state
-        board = Main.getBoardState();
-
-        // Check that the piece was promoted to a king (represented by '2')
-        assertEquals(2, board[7][0], "Player 1's piece should have been promoted to a king");
+        assertEquals(1, Main.getTileState(5, 4), "Expected Player 1 piece at new position (5,4)");
+        assertEquals(0, Main.getTileState(4, 3), "Expected captured position (4,3) to be empty");
     }
 
     @Test
-    public void testEndgameCheck() {
-        // Set up a scenario where Player 1 wins
-        int[][] board = Main.getBoardState();
-        board[0][1] = 1;  // Player 1's piece
-        board[7][6] = 0;  // No Player 2 pieces left
+    void testPromotePlayer1PieceToKing() {
+        //player1's REGULAR PIECE BECOMING KING PIECE
+        Main.movePiece(2,1,3,2);
+        Main.movePiece(5,4,4,3);
+        Main.movePiece(3,2,5,4);
+        Main.movePiece(5,2,4,1);
+        Main.movePiece(1,0,2,1);
+        Main.movePiece(6,1,5,2);
+        Main.movePiece(2,1,3,0);
+        Main.movePiece(7,2,6,1);
+        Main.movePiece(5,4,7,2);
 
-        // Check if the game is correctly detecting the win
+        int player1pieceState = Main.getTileState(7, 2);
+        assertEquals(2, player1pieceState, "Expected Player 1 piece at (7,2) to be promoted to king");
+    }
+    @Test
+    void testPromotePlayer2PiecesToKing(){
+        //player2's REGULAR PIECE BECOMING KING PIECE
+        Main.movePiece(2,1,3,2);
+        Main.movePiece(5,4,4,3);
+        Main.movePiece(2,3,3,4);
+        Main.movePiece(4,3,2,1);
+        Main.movePiece(1,4,2,3);
+        Main.movePiece(5,0,4,1);
+        Main.movePiece(0,3,1,4);
+        Main.movePiece(2,1,0,3);
+
+        int player2pieceState = Main.getTileState(0, 3);
+        assertEquals(-2, player2pieceState, "Expected Player 2 piece at (0,3) to be promoted to king");
+    }
+
+    @Test
+    void testEndgameCondition() {
         int endgameStatus = Main.checkEndgame();
-        assertEquals(1, endgameStatus, "Player 1 should win since Player 2 has no pieces left");
+        assertEquals(0, endgameStatus, "Expected game to be ongoing at the start");
     }
 
     @Test
-    public void testDrawScenario() {
-        // Set up a scenario where neither player can move
-        int[][] board = Main.getBoardState();
-        board[0][0] = 1;  // Player 1's piece
-        board[1][1] = -1; // Player 2's piece
-        board[2][2] = 0;  // No more moves left for either player
+    void testPlayer1WinsAlternateSequence() {
+        // Starting position, Player 1 moves first
+        Main.movePiece(2,1,3,2);
+        Main.movePiece(5,2,4,3);
+        Main.movePiece(2,3,3,4);
+        Main.movePiece(5,0,4,1);
+        Main.movePiece(1,2,2,3);
+        Main.movePiece(6,3,5,2);
+        Main.movePiece(3,2,5,0);
+        Main.movePiece(7,2,6,3);
+        Main.movePiece(5,0,7,2);
+        Main.movePiece(4,3,3,2);
+        Main.movePiece(2,5,3,6);
+        Main.movePiece(5,4,4,3);
+        Main.movePiece(7,2,5,4);
+        Main.movePiece(5,2,4,1);
+        Main.movePiece(3,4,5,2);
+        Main.movePiece(7,0,6,1);
+        Main.movePiece(5,2,7,0);
+        Main.movePiece(5,6,4,5);
+        Main.movePiece(5,4,6,3);
+        Main.movePiece(6,7,5,6);
+        Main.movePiece(3,6,5,4);
+        Main.movePiece(6,5,4,3);
+        Main.movePiece(2,7,3,6);
+        Main.movePiece(4,1,3,0);
+        Main.movePiece(2,3,4,1);
+        Main.movePiece(3,0,2,1);
+        Main.movePiece(1,0,3,2);
+        Main.movePiece(3,2,5,4);//2nd jump
+        Main.movePiece(7,6,6,7);
+        Main.movePiece(6,3,5,2);
+        Main.movePiece(7,4,6,5);
+        Main.movePiece(5,4,7,6);
+        Main.movePiece(5,6,4,5);
+        Main.movePiece(3,6,5,4);
+        Main.movePiece(6,7,5,6);
+        Main.movePiece(1,6,2,5);
+        Main.movePiece(5,6,4,5);
+        Main.movePiece(7,0,6,1);
+        Main.movePiece(4,5,3,4);
+        Main.movePiece(2,5,4,3);
 
-        // Check if the game correctly detects a draw
+        // Verify endgame condition
         int endgameStatus = Main.checkEndgame();
-        assertEquals(2, endgameStatus, "The game should result in a draw when neither player can move");
+        assertEquals(1, endgameStatus, "Expected Player 1 (white) to win the game");
+    }
+    @Test
+    void player2WinsAllAlternateSequence(){
+        //starting position player1 moves first
+        Main.movePiece(2,1,3,2);
+        Main.movePiece(5,2,4,3);
+        Main.movePiece(2,3,3,4);
+        Main.movePiece(4,3,2,1);
+        Main.movePiece(1,4,2,3);
+        Main.movePiece(5,6,4,5);
+        Main.movePiece(0,3,1,4);
+        Main.movePiece(2,1,0,3);
+
+        Main.movePiece(2,3,3,2);
+        Main.movePiece(4,5,2,3);
+        Main.movePiece(0,1,1,2);
+        Main.movePiece(2,3,0,1);
+        Main.movePiece(2,5,3,4);
+        Main.movePiece(0,3,2,5);
+        Main.movePiece(2,5,4,3); //2nd jump
+        Main.movePiece(4,3,2,1); //3rd jump
+        Main.movePiece(0,1,3,2);
+        Main.movePiece(0,1,1,2);
+        Main.movePiece(1,6,2,5);
+        Main.movePiece(1,2,2,3);
+        Main.movePiece(3,2,4,3);
+        Main.movePiece(5,4,3,2);
+        Main.movePiece(2,5,3,4);
+        Main.movePiece(2,3,4,5);
+        Main.movePiece(2,7,3,6);
+        Main.movePiece(4,5,2,7);
+        Main.movePiece(0,5,1,6);
+        Main.movePiece(2,7,0,5);
+        Main.movePiece(0,7,1,6);
+        Main.movePiece(0,5,2,7);
+
+        int endgameStatus = Main.checkEndgame();
+        assertEquals(-1, endgameStatus, "Expected Player 2 (black) to win the game");
     }
 }
