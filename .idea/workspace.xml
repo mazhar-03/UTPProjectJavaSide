@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="238a19e4-8aca-4329-85d9-4d982650fc85" name="Changes" comment="player 2 wins condition should be work">
+    <list default="true" id="238a19e4-8aca-4329-85d9-4d982650fc85" name="Changes" comment="send to Mr. Kwiatkowski, waiting for his response">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tests/CheckersGameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/CheckersGameTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -78,7 +79,7 @@
       <recent name="C:\Users\mazha\OneDrive\Pulpit\PROJECT\Checkers\images" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CheckersGameTest.testBoardInitialization">
+  <component name="RunManager" selected="JUnit.CheckersGameTest">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.Main" />
       <module name="Checkers" />
@@ -275,7 +276,8 @@
       <workItem from="1729809931922" duration="154000" />
       <workItem from="1729866486967" duration="5920000" />
       <workItem from="1729883331565" duration="8276000" />
-      <workItem from="1729936715122" duration="1633000" />
+      <workItem from="1729936715122" duration="2085000" />
+      <workItem from="1730063156926" duration="627000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -389,7 +391,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729904224668</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="send to Mr. Kwiatkowski, waiting for his response">
+      <option name="closed" value="true" />
+      <created>1729939437959</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1729939437959</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -416,6 +426,7 @@
     <MESSAGE value="Added &quot;check each tile logic&quot;" />
     <MESSAGE value="literally final" />
     <MESSAGE value="player 2 wins condition should be work" />
-    <option name="LAST_COMMIT_MESSAGE" value="player 2 wins condition should be work" />
+    <MESSAGE value="send to Mr. Kwiatkowski, waiting for his response" />
+    <option name="LAST_COMMIT_MESSAGE" value="send to Mr. Kwiatkowski, waiting for his response" />
   </component>
 </project>

@@ -1,10 +1,18 @@
 package tests;
 
 import main.Main;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class CheckersGameTest {
+
+    //for running the test 'class' without any problem we're reset the board to its initial state.
+    @BeforeEach
+    void setUp(){
+        Main.resetBoard();
+    }
+
     @Test
     void testBoardInitialization() {
         for (int row = 0; row < 8; row++) {
