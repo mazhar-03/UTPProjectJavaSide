@@ -97,26 +97,27 @@ public class CheckersGUI extends JFrame {
         for (int row = 0; row < 8; row++) {
             for (int col = 0; col < 8; col++) {
                 JButton tile = boardButtons[row][col];
-                int piece = Main.getTileState(row, col);  // Fetch the state of each individual tile
+                int piece = Main.getTileState(row, col);
 
                 // Clear the current icon first
                 tile.setIcon(null);
 
                 // Set the piece icons based on the tile state
                 if (piece == 1) {
-                    tile.setIcon(new ImageIcon("resources/white.png"));  // White piece
+                    tile.setIcon(new ImageIcon("src/resources/white.png")); // White piece
                 } else if (piece == -1) {
-                    tile.setIcon(new ImageIcon("resources/black.png"));  // Black piece
+                    tile.setIcon(new ImageIcon("src/resources/black.png"));  // Black piece
                 } else if (piece == 2) {
-                    tile.setIcon(new ImageIcon("resources/white_king.png"));  // White king piece
+                    tile.setIcon(new ImageIcon("src/resources/white_king.png"));  // White king piece
                 } else if (piece == -2) {
-                    tile.setIcon(new ImageIcon("resources/black_king.png"));  // Black king piece
+                    tile.setIcon(new ImageIcon("src/resources/black_king.png"));  // Black king piece
                 }
             }
         }
-        // Check for the endgame status after updating the board
+
         checkEndgameStatus();
     }
+
 
     // handling the pieces' movements according to mouse clicks
     private class TileClickListener implements ActionListener {

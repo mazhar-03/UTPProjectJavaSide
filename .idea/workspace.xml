@@ -5,21 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="238a19e4-8aca-4329-85d9-4d982650fc85" name="Changes" comment="just pieces are not visible">
-      <change afterPath="$PROJECT_DIR$/src/resources/black.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/black_king.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/white.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/white_king.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Checkers.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Checkers.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/black_king.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/white.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/white_king.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/CheckersGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/CheckersGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/main_Main.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/main_Main.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/CheckersGameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/CheckersGameTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/CheckersGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/CheckersGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/black.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/black.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/black_king.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/black_king.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/white.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/white.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/white_king.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/white_king.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +101,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.CheckersGameTest">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.Main" />
       <module name="Checkers" />
@@ -168,7 +162,10 @@
       <workItem from="1730149346006" duration="358000" />
       <workItem from="1730149727044" duration="23000" />
       <workItem from="1730195356381" duration="5503000" />
-      <workItem from="1730204401058" duration="305000" />
+      <workItem from="1730204401058" duration="2693000" />
+      <workItem from="1730217368519" duration="1572000" />
+      <workItem from="1730223825065" duration="1319000" />
+      <workItem from="1730225445892" duration="660000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -298,7 +295,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730064182860</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="just pieces are not visible">
+      <option name="closed" value="true" />
+      <created>1730204727302</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1730204727302</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
