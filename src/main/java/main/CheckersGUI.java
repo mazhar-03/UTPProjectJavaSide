@@ -104,13 +104,13 @@ public class CheckersGUI extends JFrame {
 
                 // Set the piece icons based on the tile state
                 if (piece == 1) {
-                    tile.setIcon(new ImageIcon("images/white.png"));  // White piece
+                    tile.setIcon(new ImageIcon("resources/white.png"));  // White piece
                 } else if (piece == -1) {
-                    tile.setIcon(new ImageIcon("images/black.png"));  // Black piece
+                    tile.setIcon(new ImageIcon("resources/black.png"));  // Black piece
                 } else if (piece == 2) {
-                    tile.setIcon(new ImageIcon("images/white_king.png"));  // White king piece
+                    tile.setIcon(new ImageIcon("resources/white_king.png"));  // White king piece
                 } else if (piece == -2) {
-                    tile.setIcon(new ImageIcon("images/black_king.png"));  // Black king piece
+                    tile.setIcon(new ImageIcon("resources/black_king.png"));  // Black king piece
                 }
             }
         }

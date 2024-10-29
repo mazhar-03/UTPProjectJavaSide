@@ -4,9 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="238a19e4-8aca-4329-85d9-4d982650fc85" name="Changes" comment="send to Mr. Kwiatkowski, waiting for his response">
+    <list default="true" id="238a19e4-8aca-4329-85d9-4d982650fc85" name="Changes" comment="just pieces are not visible">
+      <change afterPath="$PROJECT_DIR$/src/resources/black.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/black_king.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/white.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resources/white_king.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Checkers.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Checkers.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/black.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/black_king.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/white_king.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/CheckersGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/CheckersGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/main_Main.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/main_Main.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tests/CheckersGameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/CheckersGameTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,13 +73,22 @@
     &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/mazha/OneDrive/Pulpit/PROJECT/Checkers/images&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mazha/OneDrive/Pulpit/PROJECT/Checkers&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;ChangesTree.GroupingKeys&quot;: [
+      &quot;directory&quot;,
+      &quot;module&quot;
+    ]
   }
 }</component>
   <component name="RecentsManager">
@@ -75,11 +96,18 @@
       <recent name="C:\Users\mazha\OneDrive\Pulpit\PROJECT\Checkers\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mazha\OneDrive\Pulpit\PROJECT\Checkers\src\resources" />
       <recent name="C:\Users\mazha\OneDrive\Pulpit\PROJECT\Checkers\src\main" />
-      <recent name="C:\Users\mazha\OneDrive\Pulpit\PROJECT\Checkers\images" />
+      <recent name="C:\Users\mazha\OneDrive\Pulpit\PROJECT\Checkers\src" />
+      <recent name="C:\Users\mazha\OneDrive\Pulpit\PROJECT\Checkers\src\java\main\resources" />
+      <recent name="C:\Users\mazha\OneDrive\Pulpit\PROJECT\Checkers\src\java" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="main" />
+      <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CheckersGameTest">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.Main" />
       <module name="Checkers" />
@@ -98,7 +126,7 @@
       <module name="Checkers" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tests.*" />
+          <option name="PATTERN" value="tests.java.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -111,153 +139,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CheckersGameTest.player2WinsAllAlternateSequence" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
-      <module name="Checkers" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.CheckersGameTest" />
-      <option name="METHOD_NAME" value="player2WinsAllAlternateSequence" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-Djava.library.path=&quot;C:\Users\mazha\CLionProject\Project\gameLogic\cmake-build-debug&quot;" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CheckersGameTest.testBoardInitialization" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
-      <module name="Checkers" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.CheckersGameTest" />
-      <option name="METHOD_NAME" value="testBoardInitialization" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-Djava.library.path=&quot;C:\Users\mazha\CLionProject\Project\gameLogic\cmake-build-debug&quot;" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CheckersGameTest.testCaptureMechanics" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
-      <module name="Checkers" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.CheckersGameTest" />
-      <option name="METHOD_NAME" value="testCaptureMechanics" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-Djava.library.path=&quot;C:\Users\mazha\CLionProject\Project\gameLogic\cmake-build-debug&quot;" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CheckersGameTest.testEndgameCondition" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
-      <module name="Checkers" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.CheckersGameTest" />
-      <option name="METHOD_NAME" value="testEndgameCondition" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-Djava.library.path=&quot;C:\Users\mazha\CLionProject\Project\gameLogic\cmake-build-debug&quot;" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CheckersGameTest.testPlayer1WinsAlternateSequence" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
-      <module name="Checkers" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.CheckersGameTest" />
-      <option name="METHOD_NAME" value="testPlayer1WinsAlternateSequence" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-Djava.library.path=&quot;C:\Users\mazha\CLionProject\Project\gameLogic\cmake-build-debug&quot;" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CheckersGameTest.testPromotePlayer1PieceToKing" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
-      <module name="Checkers" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.CheckersGameTest" />
-      <option name="METHOD_NAME" value="testPromotePlayer1PieceToKing" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-Djava.library.path=&quot;C:\Users\mazha\CLionProject\Project\gameLogic\cmake-build-debug&quot;" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CheckersGameTest.testPromotePlayer2PiecesToKing" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
-      <module name="Checkers" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.CheckersGameTest" />
-      <option name="METHOD_NAME" value="testPromotePlayer2PiecesToKing" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-Djava.library.path=&quot;C:\Users\mazha\CLionProject\Project\gameLogic\cmake-build-debug&quot;" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CheckersGameTest.testValidMove" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
-      <module name="Checkers" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.CheckersGameTest" />
-      <option name="METHOD_NAME" value="testValidMove" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-Djava.library.path=&quot;C:\Users\mazha\CLionProject\Project\gameLogic\cmake-build-debug&quot;" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.CheckersGameTest" />
-      <item itemvalue="JUnit.CheckersGameTest.player2WinsAllAlternateSequence" />
-      <item itemvalue="JUnit.CheckersGameTest.testBoardInitialization" />
-      <item itemvalue="JUnit.CheckersGameTest.testCaptureMechanics" />
-      <item itemvalue="JUnit.CheckersGameTest.testEndgameCondition" />
-      <item itemvalue="JUnit.CheckersGameTest.testPlayer1WinsAlternateSequence" />
-      <item itemvalue="JUnit.CheckersGameTest.testPromotePlayer1PieceToKing" />
-      <item itemvalue="JUnit.CheckersGameTest.testPromotePlayer2PiecesToKing" />
-      <item itemvalue="JUnit.CheckersGameTest.testValidMove" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -277,7 +161,14 @@
       <workItem from="1729866486967" duration="5920000" />
       <workItem from="1729883331565" duration="8276000" />
       <workItem from="1729936715122" duration="2085000" />
-      <workItem from="1730063156926" duration="627000" />
+      <workItem from="1730063156926" duration="1060000" />
+      <workItem from="1730142844129" duration="1627000" />
+      <workItem from="1730146063273" duration="70000" />
+      <workItem from="1730146179404" duration="11000" />
+      <workItem from="1730149346006" duration="358000" />
+      <workItem from="1730149727044" duration="23000" />
+      <workItem from="1730195356381" duration="5503000" />
+      <workItem from="1730204401058" duration="305000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -399,7 +290,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729939437959</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="now Test class can be run without any problem.&#10;Added new native method">
+      <option name="closed" value="true" />
+      <created>1730064182859</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1730064182860</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -427,6 +326,8 @@
     <MESSAGE value="literally final" />
     <MESSAGE value="player 2 wins condition should be work" />
     <MESSAGE value="send to Mr. Kwiatkowski, waiting for his response" />
-    <option name="LAST_COMMIT_MESSAGE" value="send to Mr. Kwiatkowski, waiting for his response" />
+    <MESSAGE value="now Test class can be run without any problem.&#10;Added new native method" />
+    <MESSAGE value="just pieces are not visible" />
+    <option name="LAST_COMMIT_MESSAGE" value="just pieces are not visible" />
   </component>
 </project>

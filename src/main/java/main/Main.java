@@ -8,7 +8,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(main.CheckersGUI::new);
+        SwingUtilities.invokeLater(CheckersGUI::new);
     }
     public static native boolean movePiece(int startX, int startY, int endX, int endY);
     public static native int checkEndgame();
